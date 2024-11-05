@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my progect</title>
+    <style>
+        /* تهيئة عامة */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+        }
+
+        /* تصميم زر القائمة */
+        .menu {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        /* تصميم القائمة المنسدلة بطول الصفحة */
+        .dropdown {
+            display: none; /* القائمة مخفية بشكل افتراضي */
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 100vh;
+            background-color: #444;
+            padding: 20px;
+            box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        /* تصميم زر "Register" */
+        .register-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            text-align: center;
+            border: none;
+            border-radius: 3px;
+            text-decoration: none;
+            margin-top: auto;
+            margin-bottom: 30px; /* رفع الزر قليلاً */
+        }
+
+        /* تغيير اللون عند التمرير */
+        .register-btn:hover {
+            background-color: #45a049;
+        }
+
+        /* تصميم زر الإغلاق */
+        .close-btn {
+            background-color: #f44336; /* لون الزر الأحمر */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-bottom: 10px; /* مسافة بين الزر وأعلى القائمة */
+        }
+
+        /* جعل القائمة تتناسب مع الأجهزة الصغيرة */
+        @media (max-width: 600px) {
+            .dropdown {
+                width: 100%; /* عرض القائمة يتناسب مع عرض الجهاز */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- زر القائمة -->
+    <div class="menu" onclick="toggleDropdown()">☰ </div>
+
+    <!-- القائمة المنسدلة بطول الصفحة -->
+    <div class="dropdown" id="dropdownMenu">
+        <!-- زر الإغلاق -->
+        <button class="close-btn" onclick="toggleDropdown()">✖</button>
+        
+        <!-- عناصر أخرى يمكن إضافتها هنا -->
+        
+        <!-- زر Register في أسفل القائمة -->
+        <a href="http://localhost/logian/register.PHP" class="register-btn">Register</a>
+    </div>
+
+    <!-- جافا سكريبت للتحكم في القائمة المنسدلة -->
+    <script>
+        function toggleDropdown() {
+            var dropdown = document.getElementById("dropdownMenu");
+            dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+        }
+    </script>
+
+</body>
+</html>
